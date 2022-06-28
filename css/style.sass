@@ -1,0 +1,1145 @@
+@import vars
+@import mixins
+
+*
+    margin: 0
+    padding: 0
+    outline: none
+
+a
+    text-decoration: none
+
+ul
+    list-style-type: none
+
+summary
+    display: block
+    outline: none
+
+summary::-webkit-details-marker
+    display: none
+
+body, button, input
+    font-family: 'Lato', sans-serif
+html, body
+    height: 100%
+.top
+    flex-grow: 1
+.wrapper
+    min-height: 100%
+    display: flex
+    flex-direction: column
+svg path
+    transition-property: fill
+    transition-duration: $time
+.center
+    padding-left: calc(50% - 570px)
+    padding-right: calc(50% - 570px)
+
+.pink
+    color: $colorSelect
+
+.headerTop
+    height: 75px
+    background: $colorMain
+    +flexBetween
+    position: relative
+.header-left
+    padding-left: 16px
+.header-right
+    padding-right: 16px
+    &Li:not(:last-child)
+        margin-right: 33px
+.search
+    margin-left: 41px
+.header-rightLi
+    display: inline-block
+
+.menu
+    &Box
+        display: none
+        padding-left: 34px
+        padding-top: 37px
+        padding-bottom: 37px
+        background-color: $colorReverse
+        width: 232px
+        box-sizing: border-box
+        position: absolute
+        top: 75px
+        right: 0
+        z-index: 10
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    &Close
+        height: 12px
+        width: 12px
+        transition: transform $time - .2s
+        position: absolute
+        top: 16px
+        right: 16px
+        &:hover
+            transform: scale(1.1)
+    &Heading
+        +font(bold, 0, 0)
+        color: #000000
+
+    &Li
+        +font(normal, 0, 0)
+        color: $colorSelect
+        padding-top: 20px
+
+        &Under
+            +font(normal, 0, 0)
+            color: #6F6E6E
+            padding-top: 12px
+            margin-left: 22px
+    &Mobile
+        display: none
+#menuCheck
+    display: none
+    &:checked ~ .menuBox
+        display: block
+
+.promo
+    display: flex
+    background: #F1E4E6
+    padding-left: calc(50% - 800px)
+    padding-right: calc(50% - 800px)
+
+    &-left,
+
+    &-right
+        width: 50%
+
+    &Block
+        border-left: 12px solid $colorSelect
+        padding-left: 16px
+        margin-top: 35%
+
+    &Img
+        display: flex
+        width: 100%
+
+    &Header
+        +font(900, 34, 41)
+        color: $colorMain
+
+    &Text
+        +font(bold, 18, 21)
+        color: $colorMain
+
+.choose
+    display: flex
+    flex-direction: column
+    margin-top: 64px
+    margin-bottom: 96px
+
+    &Top
+        display: flex
+        padding-bottom: 30px
+
+    &Img
+        width: 100%
+
+    &Card,
+
+    &Bot
+        position: relative
+
+    &Card:not(:first-child)
+        margin-left: 30px
+
+    &Content
+        position: absolute
+        top: 0
+        bottom: 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        width: 100%
+        height: 100%
+
+    &Text
+        +font(normal, 2, 2)
+        text-align: center
+        color: $colorReverse
+
+    &Heading
+        +font(bold, 10, 11)
+        text-align: center
+        color: $colorSelect
+
+.mainHeading
+    +font(400, 16, 19)
+    color: $colorMain
+    text-align: center
+
+.mainText
+    +font(400, 0, 0)
+    color: #9F9F9F
+    text-align: center
+    padding-bottom: 48px
+
+.mainCards
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.addToCart
+    +font (normal, 0, 0)
+    color: $colorReverse
+    border: 1px solid $colorReverse
+    padding: 13px
+    position: absolute
+    top: 188px
+    left: 111px
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0
+    transition-property: opacity, color, background-color
+    transition-duration: $time
+
+    &Img
+        margin-right: 11px
+
+    &:hover
+        background-color: white
+        color: black
+
+    &:hover .addToCartImg path
+        fill: black
+
+.mainCard
+    margin-bottom: 30px
+    background: #F8F8F8
+    position: relative
+    transition-property: transform
+    transition-duration: $time
+    &Content
+        padding: 24px 16px 20px
+
+    &Heading
+        +font(normal, -1, -1)
+        color: #000000
+
+    &Text
+        +font(300, 0, 0)
+        color: #5D5D5D
+        max-width: 320px
+        padding-top: 12px
+
+    &Img
+        transition-property: filter
+        transition-duration: $time
+    &:hover
+        transform: scale(1.05)
+
+    &:hover .mainCardImg
+        filter: brightness(50%)
+
+    &:hover .addToCart
+        opacity: 1
+
+@media (max-width: 1120px)
+    .mainCards
+        justify-content: space-around
+
+.price
+    +font(normal, 2, 2)
+    color: $colorSelect
+    padding-top: 18px
+
+.allProduct
+    display: flex
+    padding-top: 48px
+    padding-bottom: 95px
+
+.mainButton
+    +font(normal, 2, 2)
+    color: $colorSelect
+    border: 1px solid $colorSelect
+    padding: 14px 38px
+    margin: 0 auto
+    transition-property: all
+    transition-duration: $time
+
+    &:hover
+        background: $colorSelect
+        color: $colorReverse
+
+.terms
+    background: $colorMain
+    display: flex
+    justify-content: space-between
+    padding-top: 55px
+    padding-bottom: 104px
+    flex-wrap: wrap
+
+    &Block
+        +flexCenterCol
+        width: 360px
+        justify-content: flex-end
+        padding-top: 48px
+        & svg path
+            fill: $colorSelect
+
+    &Heading
+        +font(normal, 6, 7)
+        color: $colorReverse
+        padding-top: 25px
+        padding-bottom: 16px
+
+    &Text
+        +font(300, 0, 0)
+        color: $colorReverse
+        text-align: center
+
+/*-------Footer------*/
+
+.footerTop
+    background-image: url(../img/footer.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    min-height: 448px
+    display: flex
+    justify-content: space-between
+
+    &-left,
+
+    &-right
+        width: 360px
+        +flexCenterCol
+
+.footerImg
+    padding-top: 97px
+    padding-bottom: 30px
+
+.footerText
+    +font(normal, 6, 7)
+    text-align: center
+    color: $colorMain
+
+.italic
+    font-style: italic
+
+.footerRightHeading
+    +font(bold, 10, 23)
+    text-align: center
+    color: $colorMain
+    padding-top: 150px
+
+.footerRightText
+    +font(normal, 4, 13)
+    text-align: center
+    color: $colorMain
+
+.subscribe
+    display: flex
+    padding-top: 32px
+
+    &Form
+        background: #E1E1E1
+        border: none
+        border-top-left-radius: 30px
+        border-bottom-left-radius: 30px
+        width: 256px
+        padding-left: 22px
+        padding-right: 22px
+        box-sizing: border-box
+
+    &Button
+        background: $colorSelect
+        border-top-right-radius: 30px
+        border-bottom-right-radius: 30px
+        +font(normal, 0, 0)
+        color: $colorReverse
+        height: 49px
+        width: 100px
+        border: none
+        transition-property: background
+        transition-duration: $time
+
+        &:hover
+            background: $colorSelect - #111111
+
+.footerBot
+    background: $colorMain
+    height: 79px
+    +flexBetween
+    &-left
+        padding-left: 16px
+
+.copy
+    +font(normal, 2, 2)
+    color: $colorReverse
+
+.footerBot-right
+    display: flex
+    padding-right: 16px
+
+.iconsSites
+    margin-left: 7px
+    width: 32px
+    height: 32px
+    background-color: $colorReverse
+    display: flex
+    align-items: center
+    justify-content: center
+    transition-property: background
+    transition-duration: $time
+
+    &:hover
+        background: $colorSelect
+
+    &:hover .iconsSocial path
+        fill: $colorReverse
+
+/*--------Каталог------*/
+
+.headerBot
+    background: #F8F3F4
+    height: 148px
+    +flexBetween
+
+.catalogHeader
+    +font(normal, 10, 12)
+    color: $colorSelect
+
+.headerBot-right
+    display: flex
+
+.catalogMenu
+    +font(300, 0, 0)
+    color: #636363
+    transition-property: color
+    transition-duration: $time
+
+    &Ul
+        display: flex
+
+    &Li:not(:last-child)::after
+        content: "/"
+        padding-left: 3px
+        padding-right: 3px
+
+    &Li:last-child .catalogMenu
+        color: $colorSelect
+
+    &:hover
+        color: $colorSelect
+
+.filters
+    display: flex
+    margin-top: 38px
+    margin-bottom: 64px
+.filterMain
+    height: 17px
+    position: relative
+    z-index: 1
+
+.filterBox
+    padding-bottom: 16px
+    width: 360px
+
+    &[open]
+        background: #FFFFFF
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+        box-sizing: border-box
+
+        & .filterChoose
+            color: $colorSelect
+        & .filterChoose svg path
+            fill: $colorSelect
+
+.filterChoose
+    +font(600, 0, 0)
+    color: #000000
+    padding: 13px 11px 0px 16px
+    transition-property: color
+    transition-duration: $time
+
+    & svg
+        padding-left: 11px
+    &:hover
+        color: $colorSelect
+        & svg path
+            fill: $colorSelect
+
+.filtersCat
+    margin-top: 16px
+    &Name
+        border-left: 5px solid $colorSelect
+        width: 327px
+        height: 37px
+        margin-left: 17px
+    &[open] .filtersCatLine
+        color: $colorSelect
+
+    &Line
+        +font(normal, 0, 1)
+        color: #6F6E6E
+        border-bottom: 1px solid #EBEBEB
+        margin-right: 15px
+        display: block
+        padding: 9px 11px
+
+    &Link
+        +font(normal, 0, 0)
+        color: #6F6E6E
+        transition-property: color
+        transition-duration: $time
+
+    &Li
+        margin-top: 11px
+        &:hover .filtersCatLink
+            color: $colorSelect
+    &Ul
+        margin-bottom: 24px
+        margin-top: 13px
+        margin-left: 34px
+    &:hover .filtersCatLine
+        color: $colorSelect
+.filter
+    +font(normal, 0, 0)
+    color: #6F6E6E
+    padding-top: 13px
+    height: 17px
+    position: relative
+    z-index: 1
+    transition-property: color
+    transition-duration: $time
+    &Mark::after
+        content: url(../img/choose.svg)
+        margin-left: 10px
+        position: relative
+        bottom: 1px
+    &:hover
+        color: $colorSelect
+    &Size
+        width: 79px
+        &Box
+            width: 79px
+            padding: 9px
+            background: #FFFFFF
+            box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+            margin-top: 5px
+    &Trend
+        margin-left: 30px
+        margin-right: 27px
+.checkLabel
+    +font(normal, 0, 5)
+    color: #6F6E6E
+label:before
+    transition-property: background-color
+    transition-duration: $time
+
+.checkMark
+    position: absolute
+    z-index: -1
+    opacity: 0
+    &+label
+        display: inline-flex
+        align-items: center
+        user-select: none
+        &::before
+            content: ''
+            display: inline-block
+            width: 12px
+            height: 12px
+            flex-shrink: 0
+            flex-grow: 0
+            border: 1px solid #EBEBEB
+            box-sizing: border-box
+            margin-right: 10px
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: 50% 50%
+    &:checked+label:before
+        border-color: $colorSelect
+        background-color: $colorSelect
+        background-image: url(../img/checkmark.png)
+    &:not(:disabled):not(:checked)+label:hover:before
+        background-color: #EBEBEB
+
+.pagination
+    display: flex
+    align-items: center
+    border: 1px solid #EBEBEB
+    box-sizing: border-box
+    padding: 15px 16px
+    border-radius: 3px
+    width: 284px
+    margin: 0 auto
+    margin-top: 48px
+    margin-bottom: 69px
+    & a
+        +font(300, 2, -3)
+        color: #C4C4C4
+        display: block
+        padding: 0 8px
+        height: 16px
+        transition-property: color, fill
+        transition-delay: $time
+    & a:hover
+        color: $colorSelect
+        & .paginationNext path
+            fill: $colorSelect
+    .active
+        color: $colorSelect
+
+/*----------product----------*/
+
+.productImg
+    display: flex
+    justify-content: center
+    background: #F7F7F7
+    padding-bottom: 42px
+    padding-top: 11px
+    position: relative
+    max-height: 777px
+    box-sizing: border-box
+    &-chosen
+        width: 50%
+        max-width: 597px
+
+.nextImg
+    padding: 10.5px 17px
+    background: rgba(42, 42, 42, 0.15)
+    position: absolute
+    top: 50%
+    &:hover svg path
+        fill: $colorSelect
+
+    &Right
+        right: 0
+
+    &Left
+        left: 0
+
+.productDescription
+    width: 1140px
+    height: 600px
+    border: 1px solid #EAEAEA
+    box-sizing: border-box
+    background: $colorReverse
+    +flexCenterCol
+    position: relative
+    bottom: 60px
+    margin-left: calc(50% - 570px)
+
+    & svg path
+        fill: $colorSelect
+@media (max-width: 1139px)
+    .productDescription
+        width: 100%
+        bottom: 0
+        display: flex
+        flex-direction: column
+        margin-left: 0
+
+.productCatalog
+    +font(300, 0, 0)
+    color: $colorSelect
+    padding-top: 64px
+    padding-bottom: 12px
+
+.productHeading
+    +font(300, 4, 5)
+    color: #4D4D4D
+    padding-top: 12px
+
+.productText
+    +font(300, 0, 0)
+    text-align: center
+    color: #5E5E5E
+    padding-top: 48px
+    max-width: 554px
+
+.productPrice
+    +font(300, 10, 12)
+    color: $colorSelect
+    padding-top: 32px
+    padding-bottom: 65px
+
+.addToCart-product
+    +font(normal, 2, 2)
+    color: $colorSelect
+    border: 1px solid $colorSelect
+    height: 47px
+    width: 211px
+    display: flex
+    align-items: center
+    margin-top: 49px
+    transition-property: color, background-color
+    transition-duration: $time
+
+    &:hover
+        background-color: $colorSelect
+        color: $colorReverse
+        & .addToCartImg-product path
+            fill: $colorReverse
+
+.addToCartImg-product path
+    fill: $colorSelect
+
+.addToCartImg-product
+    margin-right: 23px
+    margin-left: 23px
+
+.mainCards-product
+    padding-top: 70px
+    padding-bottom: 128px
+
+.chooseFeatureLi
+    display: inline-block
+    +font(normal, 0, 0)
+    color: #6F6E6E
+    padding-top: 65px
+
+    &:not(:last-child)
+        padding-right: 22px
+
+    &:after
+        content: url(../img/choose.svg)
+        padding-left: 9px
+        align-self: center
+
+/*-----------Cart------------*/
+
+.cartContent
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.cartGoods
+    +flexCenterCol
+    width: 652px
+    margin-top: 56px
+
+    &Inside
+        display: flex
+        flex-direction: column
+        width: 100%
+
+    &Buttons
+        +flexBetween
+        margin-top: 72px
+        margin-bottom: 144px
+        width: 100%
+
+    &Button
+        height: 50px
+        width: 225px
+        border: 1px solid #A4A4A4
+        background: $colorReverse
+        +font(300, 0, 0)
+        color: #000000
+        transition-property: all
+        transition-duration: $time
+        &:hover
+            background: $colorSelect
+            border: 1px solid $colorSelect
+            color: $colorReverse
+.cartCard
+    display: flex
+    position: relative
+    background: #FFFFFF
+    border: 0px solid #000
+    width: 100%
+    height: 306px
+    margin-top: 40px
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13))
+
+    &Img
+        width: 262px
+
+    &Info
+        padding: 22px 31px
+
+        &Heading
+            +font(normal, 10, 12)
+            color: #222224
+            width: 205px
+            padding-bottom: 42px
+
+        &Text
+            +font(normal, 8, 12)
+            color: #575757
+
+        .quantityProduct
+            width: 32px
+            padding: 1px
+            padding-left: 17px
+            border: 1px solid #EAEAEA
+            +font(normal, 4, 5)
+            color: #656565
+            margin-left: 24px
+.exit
+    opacity: 0
+    position: absolute
+    top: 28px
+    right: 22px
+    border: none
+    height: 18px
+    background-color: #FFFFFF
+    transition-property: opacity
+    transition-duration: $time
+    &:hover
+        transform: scale(1.2)
+.cartCard:hover .exit
+    opacity: 1
+.cartInfo
+    width: 360px
+    display: flex
+    flex-direction: column
+    padding-top: 113px
+
+.cartAdress
+    padding-bottom: 57px
+    &Heading
+        +font(300, 2, 2)
+        color: #222222
+    &Form
+        margin-top: 20px
+        padding: 13px 17px
+        border: 1px solid #A4A4A4
+        width: 100%
+        +font(300, -1, -1)
+        color: #222222
+        box-sizing: border-box
+
+    &Button
+        +font(300, -3, -4)
+        color: #4A4A4A
+        border: 1px solid #A4A4A4
+        padding: 12px 14px
+        margin-top: 24px
+        background: #FFFFFF
+        box-sizing: border-box
+        transition-property: background, color, border
+        transition-duration: $time
+        &:hover
+            background: $colorSelect
+            color: $colorReverse
+            border: 1px solid $colorSelect
+
+.cartTotal
+    background: #F5F3F3
+    padding: 40px 44px
+    display: flex
+    flex-direction: column
+
+    .subTotal
+        +font(normal, -3, -4)
+        color: #4A4A4A
+        align-self: flex-end
+        &::after
+            content: "$900"
+            padding-left: 24px
+    .grandTotal
+        +font(300, 2, 2)
+        color: #222222
+        align-self: flex-end
+        padding-top: 12px
+        padding-bottom: 21px
+        &::after
+            content: "$900"
+            padding-left: 24px
+            color: $colorSelect
+    &Button
+        height: 50px
+        background: $colorSelect
+        +font(300, 2, 2)
+        color: $colorReverse
+        border: none
+        margin-top: 17px
+        transition-property: background
+        transition-duration: $time
+        &:hover
+            background: $colorSelect - #111111
+
+/*----------Registration------------*/
+
+.regContent
+    display: flex
+    padding-bottom: 64px
+    padding-top: 64px
+    &-left
+        width: 360px
+        margin-right: 128px
+    &-right
+        max-width: 652px
+.reg
+    &Text
+        +font(300, 10, 12)
+        color: #000000
+        &-left
+            +font(300, -1, -1)
+            color: #B1B1B1
+            padding-top: 15px
+    &Heading
+        padding-bottom: 22px
+    &Li
+        padding-top: 16px
+        &::before
+            content: url(..//img/check.svg)
+            padding-right: 23px
+    &Gender
+        display: flex
+        margin-top: 32px
+        margin-bottom: 32px
+        height: 17px
+        align-items: center
+        &Choose
+            +font(300, -3, -4)
+            color: #000000
+            padding-left: 10px
+            padding-right: 20px
+    &Button
+        border: none
+        padding: 16px 20px 16px 29px
+        background: $colorSelect
+        +font(normal, 0, 0)
+        color: $colorReverse
+        margin-top: 64px
+        transition-property: background
+        transition-duration: $time
+        & svg
+            padding-left: 20px
+        &:hover
+            background: $colorSelect - #111111
+
+@media (max-width: 1024px)
+    .center
+        padding-left: calc(50% - 367px)
+        padding-right: calc(50% - 367px)
+    .promoHeader
+        +font(900, 30, 36)
+    .promoText
+        +font(700, 10, 11)
+    .mainCards
+        justify-content: space-between
+    .allProduct
+        padding-top: 2px
+        padding-bottom: 65px
+    .terms
+        flex-direction: column
+        align-items: center
+        padding-top: 0
+        padding-bottom: 64px
+    .footerTop
+        flex-direction: column
+        align-items: center
+    .footerImg, .footerRightHeading
+        padding-top: 64px
+    .subscribe
+        padding-top: 28px
+        padding-bottom: 140px
+    .filterSizeBox
+        width: 58px
+    .lastCard
+        display: none
+    .product
+        &Img-chosen
+            width: 75%
+
+    .cart
+        &Content
+            justify-content: center
+        &Goods
+            margin-top: 19px
+            &Buttons
+                margin-top: 62px
+                margin-bottom: 64px
+        &Info
+            padding-top: 0
+            width: 100%
+            flex-direction: inherit
+        &Adress
+            margin-right: 15px
+            padding-bottom: 128px
+        &Total
+            height: 214px
+            box-sizing: border-box
+            margin-top: 39px
+    .reg
+        &Heading, &Text
+            +font(300, 2, 2)
+        &Content
+            padding-bottom: 0
+            &-left
+                margin-right: 22px
+                margin-left: 8px
+            &-right
+                max-width: 354px
+        &Button
+            margin-top: 39px
+@media (max-width: 724px)
+    .mainCards
+        margin: 0 10px
+        justify-content: center
+@media (max-width: 750px)
+    .headerBot
+        &-left, &right
+            padding-left: 16px
+            padding-right: 16px
+@media (max-width: 667px)
+    .header-rightLi:not(:first-child)
+        display: none
+    .header-right a:not(:first-child)
+        display: none
+    .menu
+        &Box
+            padding-top: 0
+            width: 100%
+        &Close
+            bottom: 16px
+            top: auto
+        &Mobile
+            display: flex
+            padding: 16px 0
+            background: $colorSelect
+            justify-content: center
+            position: absolute
+            width: 100%
+            left: 0
+            &Li
+                display: inline-block
+                margin: 0 32px
+            &Ul
+                padding-right: 0px
+        &Heading
+            padding-top: 48px
+
+    .promo
+        height: 363px
+        justify-content: center
+        align-items: center
+        &-left
+            display: none
+        &-right
+            width: 263px
+        &Block
+            margin-top: 0
+        &Header
+            +font(900, 24, 39)
+        &Text
+            +font(700, 6, 7)
+    .choose
+        margin-bottom: 64px
+        align-items: center
+        &Top
+            flex-direction: column
+            align-items: center
+        &Card
+            width: 343px
+            height: 247px
+            &:not(:first-child)
+                margin-left: 0px
+                margin-top: 32px
+        &Bot
+            width: 343px
+            height: 111px
+            margin: 0 16px
+        &Img
+            height: 100%
+            object-fit: cover
+            object-position: center
+    .subscribe
+        padding-bottom: 100px
+    .footerRightText
+        +font(400, 0, 4)
+    .footerText
+        +font(400, 5, 5)
+    .footerBot
+        flex-direction: column-reverse
+        height: 100px
+        padding-top: 43px
+    .copy
+        padding-bottom: 14px
+        padding-top: 40px
+    .headerBot
+        flex-direction: column
+        justify-content: space-around
+        box-sizing: border-box
+        padding-top: 8px
+        padding-bottom: 30px
+    .filter
+        +font(normal, -2, -3)
+        &Choose
+            font-size: 0px
+            & svg
+                width: 37px
+                height: 25px
+        &Box:not([open])
+            position: absolute
+        &Trend
+            margin-left: 107px
+            margin-right: 9px
+    .product
+        &ImgChosen
+            width: 100%
+        &Text
+            max-width: 326px
+            line-height: 20px
+            padding-top: 32px
+        &Description svg
+            max-width: 175px
+        &Price
+            padding-bottom: 32px
+    .addToCart-product
+        margin-top: 64px
+    .chooseFeatureLi
+        +font(400, -4, -5)
+        padding-top: 48px
+
+    .cart
+        &Info
+            flex-direction: column
+            padding: 6px
+            margin-bottom: 96px
+        &Goods
+            width: 358px
+            &Buttons
+                margin-top: 30px
+                margin-bottom: 48px
+
+            &Button
+                width: 174px
+                height: 33px
+                +font(400, -2, -3)
+        &Adress
+            padding-bottom: 10px
+        &Card
+            height: 188px
+            &Img
+                width: 143px
+            &Info
+                padding: 13px 17px
+                &Heading
+                    +font(400, 2, 2)
+                    width: 140px
+                    padding-bottom: 25px
+                &Text
+                    +font(400, 0, 0)
+            .quantityProduct
+                width: 24px
+                height: 15px
+                +font(400, -4, -5)
+    .exit
+        height: 11px
+        width: 11px
+        top: 17px
+        right: 12px
+        &Img
+            width: 100%
+    .regContent
+        flex-direction: column
+        padding: 0 8px
+        margin-top: 40px
+        margin-bottom: 100px
+        align-items: center
+        &-right
+            margin-top: 30px
+        &-left
+            margin-right: 0
